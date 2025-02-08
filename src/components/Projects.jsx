@@ -25,6 +25,11 @@ const Projects = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <ProjectCard
+                    image="/assets/agri-connect.png"
+                    title="Agri Connect"
+                    description="**AgriConnect** is a MERN stack-based eCommerce platform that connects farmers directly with consumers, ensuring fair pricing and transparency. It features a user-friendly design with Tailwind CSS and MySQL for efficient data management."
+                />
+                <ProjectCard
                     image="/assets/wm.PNG"
                     title="Weather Masters"
                     description="Weather Masters is a Flask and javascript based web application that provides real-time weather information. This documentation aims to guide users through the application's structure, functionality, and usage."
