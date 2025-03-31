@@ -115,7 +115,6 @@ const SkillsPage = () => {
                     title="Tailwind CSS"
                     description="Experienced in Tailwind CSS framework."
                 />
-                {/* Add more SkillCard components for frontend frameworks */}
             </div>
         </div>
     );

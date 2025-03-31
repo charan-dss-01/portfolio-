@@ -53,9 +53,9 @@ export default function Contact() {
                     <div className="mt-4 mb-4 flex  flex-col gap-2">
               <p className="text-grey">follow me on:</p>
               <div className="flex gap-6">
-              <a href="https://www.instagram.com/dss.charan_143/?utm_source=ig_web_button_share_sheet"><i class="fa-brands fa-instagram text-3xl text-orange-500  cursor-pointer"></i></a>
-            <a href="https://www.linkedin.com/in/charandonthu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin text-3xl text-orange-500  cursor-pointer"></i></a>
-            <a><i class="fa-brands fa-github text-3xl text-orange-500 cursor-pointer"></i></a>
+              <a href="https://www.instagram.com/dss.charan_143/?utm_source=ig_web_button_share_sheet"><i className="fa-brands fa-instagram text-3xl text-orange-500  cursor-pointer"></i></a>
+            <a href="https://www.linkedin.com/in/charandonthu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i className="fa-brands fa-linkedin text-3xl text-orange-500  cursor-pointer"></i></a>
+            <a href="https://github.com/charan-dss-01/"><i className="fa-brands fa-github text-3xl text-orange-500 cursor-pointer"></i></a>
               </div>
           </div>
                 </div>

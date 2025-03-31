@@ -2,34 +2,98 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function About() {
-  return (
-    <div className="flex justify-center items-center">
-      <div className="w-full flex flex-col flex-col-reverse justify-center items-center gap-4 h-auto md:flex mt-6 md:justify-around md:flex-row">
-        <div className="w-72 md:w-96 lg:w-120 flex flex-col">
-          <p className="text-start  text-2xl text-gray-700 text-xl lg:text-xl xl:text-3xl">
-            <span className="text-3xl block text-orange-500 font-bold mb-3">Hi, I'm Charan,</span>
-            A passionate web developer. Currently, I am studying Computer Science Engineering at MVSR Engineering College. I have a strong interest in web development, and I'm enthusiastic about it.
-          </p>
-          <div className="mt-6">
-          <button className="p-3 text-white bg-orange-500 rounded hover:text-black transition duration-300 ease-in-out">Resume</button>
+  const handleDownload = () => {
+    // Replace with your actual resume file path
+    const resumeUrl = '/assets/resume-ol.pdf';
+    const link = document.createElement('a');
+    link.href = resumeUrl;
+    link.download = 'Charan_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-          <Link to="/projects"><button className="p-3 ml-2 border-black border-2 border-solid rounded">View Work</button></Link>
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 py-12">
+      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Content Section */}
+        <div className="space-y-8 text-center lg:text-left">
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+                Hi, I'm Charan
+              </span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+              Passionate Full Stack Developer specializing in modern web technologies. 
+              Currently pursuing Computer Science Engineering at MVSR Engineering College, 
+              focused on creating impactful digital experiences through clean code 
+              and innovative solutions.
+            </p>
           </div>
-          <div className="mt-4 mb-4 flex  flex-col gap-2">
-              <p className="text-grey">follow me on:</p>
-              <div className="flex gap-6">
-              <a href="https://www.instagram.com/dss.charan_143/?utm_source=ig_web_button_share_sheet"><i class="fa-brands fa-instagram text-3xl hover:text-orange-500 transition duration-300 ease-in-out cursor-pointer"></i></a>
-            <a href="https://www.linkedin.com/in/charandonthu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin text-3xl hover:text-orange-500 transition duration-300 ease-in-out cursor-pointer"></i></a>
-            <a><i class="fa-brands fa-github text-3xl hover:text-orange-500 cursor-pointer"></i></a>
-              </div>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <button 
+              onClick={handleDownload}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-orange-500/30"
+            >
+              Download Resume
+            </button>
+            <Link 
+              to="/projects"
+              className="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4 rounded-lg font-semibold transform transition-all duration-300 hover:scale-105"
+            >
+              View My Work
+            </Link>
+          </div>
+
+          {/* Social Links */}
+          <div className="pt-8">
+            <p className="text-gray-500 mb-4">Connect with me:</p>
+            <div className="flex justify-center lg:justify-start gap-6">
+              {[
+                { 
+                  icon: 'instagram',
+                  url: 'https://www.instagram.com/dss.charan_143/',
+                  color: 'hover:text-orange-500'
+                },
+                { 
+                  icon: 'linkedin',
+                  url: 'https://www.linkedin.com/in/charandonthu',
+                  color: 'hover:text-blue-600'
+                },
+                { 
+                  icon: 'github',
+                  url: 'https://github.com/charan-dss-01/',
+                  color: 'hover:text-gray-800'
+                }
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-3xl text-gray-600 transition-all duration-300 ${social.color}`}
+                >
+                  <i className={`fa-brands fa-${social.icon}`} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="mt-4 md:mt-0 md:ml-8 relative flex justify-center items-center"> {/* Added bg-red-100 for visibility */}
-        <img
+
+        {/* Image Section */}
+        <div className="relative group flex justify-center lg:justify-end">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden transform transition-all duration-500 hover:rotate-3">
+            <img
               src="/assets/charan.jpg"
-              alt="Profile"
-              className="w-40 h-40 md:w-64 md:h-64 rounded-full object-cover border-4 border-gray-300 hover:border-orange-500 transition duration-300 ease-in-out shadow-lg"
+              alt="Charan Donthu"
+              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-orange-500/20 to-transparent" />
+          </div>
+          <div className="absolute -bottom-4 -right-4 w-24 h-24 border-4 border-orange-500 rounded-full bg-white shadow-xl hidden lg:block" />
         </div>
       </div>
     </div>
